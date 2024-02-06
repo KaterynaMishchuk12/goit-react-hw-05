@@ -1,0 +1,33 @@
+import css from "./App.module.css";
+import clsx from "clsx";
+import { NavLink, Route, Routes } from "react-router-dom";
+import NotFound from "../pages/NotFound";
+import Home from "../pages/Home";
+import Movies from "../pages/Movies";
+import { fetchMovies } from "../fetch";
+
+const buildLinkClass = ({ isActive }) => {
+  return clsx(css.link, isActive && css.active);
+};
+
+export default function App() {
+  fetchMovies();
+  return (
+    <div>
+      <nav className={css.nav}>
+        <NavLink to="/" className={buildLinkClass}>
+          Home
+        </NavLink>
+        <NavLink to="/movies" className={buildLinkClass}>
+          Movies
+        </NavLink>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
+  );
+}
