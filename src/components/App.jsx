@@ -4,14 +4,15 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
 import Movies from "../pages/Movies";
-import { fetchMovies } from "../fetch";
+import MovieDetails from "../pages/MovieDetails";
+import MovieCast from "./MovieCast";
+import MovieReview from "./MovieReview";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
 };
 
 export default function App() {
-  fetchMovies();
   return (
     <div>
       <nav className={css.nav}>
@@ -26,6 +27,12 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
+
+        <Route path="movies/:movieId" element={<MovieDetails />}>
+          <Route path="movies/:movieId/cast" element={<MovieCast />} />
+          <Route path="movies/:movieId/reviews" element={<MovieReview />} />
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
