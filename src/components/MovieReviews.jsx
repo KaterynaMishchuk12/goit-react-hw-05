@@ -1,1 +1,1 @@
-export default function MovieReviews() {}
+export const MovieReviews = () => {};

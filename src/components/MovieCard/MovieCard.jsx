@@ -10,6 +10,8 @@ export const MovieCard = ({ movie }) => {
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
+        width="300"
+        height="440"
       />
 
       <h2>
@@ -22,7 +24,7 @@ export const MovieCard = ({ movie }) => {
 
       <p>Additional information</p>
       <div className={css.nav}>
-        <Link to="">Cast</Link>
+        <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>
       </div>
       <Outlet />

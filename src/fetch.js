@@ -45,3 +45,14 @@ export const fetchMovieById = async (movieId) => {
     throw error;
   }
 };
+
+export const fetchCast = async (movieId) => {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`;
+  try {
+    const response = await axios.get(url, options);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+    throw error;
+  }
+};
