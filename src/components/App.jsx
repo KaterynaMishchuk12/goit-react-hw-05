@@ -6,7 +6,7 @@ import Home from "../pages/Home";
 import Movies from "../pages/Movies";
 import MovieDetails from "../pages/MovieDetails";
 import MovieCast from "./MovieCast";
-import MovieReview from "./MovieReview";
+import MovieReviews from "./MovieReviews";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -30,7 +30,7 @@ export default function App() {
 
         <Route path="movies/:movieId" element={<MovieDetails />}>
           <Route path="movies/:movieId/cast" element={<MovieCast />} />
-          <Route path="movies/:movieId/reviews" element={<MovieReview />} />
+          <Route path="movies/:movieId/reviews" element={<MovieReviews />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

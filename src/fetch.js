@@ -27,7 +27,18 @@ export const fetchTrendingMovies = async () => {
   const url = `/trending/movie/day?language=en-US`;
   try {
     const response = await axios.get(url, options);
-    console.log(response.data);
+
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+    throw error;
+  }
+};
+
+export const fetchMovieById = async (movieId) => {
+  const url = `/movie/${movieId}?language=en-US`;
+  try {
+    const response = await axios.get(url, options);
     return response.data;
   } catch (error) {
     console.log(error.message);
