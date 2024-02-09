@@ -22,7 +22,7 @@ export const MovieCard = ({ movie }) => {
 
       <p>{movie.overview}</p>
 
-      <p>Additional information</p>
+      <h3>Additional information</h3>
       <div className={css.nav}>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>

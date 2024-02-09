@@ -1,0 +1,13 @@
+.backlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.backlink:hover {
+  color: red;
+}
