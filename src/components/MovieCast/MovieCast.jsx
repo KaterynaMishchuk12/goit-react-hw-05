@@ -1,8 +1,9 @@
-import { fetchCast } from "../fetch";
+import { fetchCast } from "../../fetch";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
-import { Loader } from "./Loader/Loader";
+import { ErrorMessage } from "../ErrorMessage/ErrorMessage";
+import { Loader } from "../Loader/Loader";
+import css from "./MovieCast.module.css";
 
 export default function MovieCast() {
   const { movieId } = useParams();
@@ -32,19 +33,19 @@ export default function MovieCast() {
     <div>
       {loading && <Loader />}
       {error && <ErrorMessage />}
-
-      <p>cast info must be here</p>
       <ul>
         {cast.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className={css.castItem}>
             <img
               width="80"
               height="120"
               src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
               alt={item.name}
             />
-            <p>{item.name}</p>
-            <p>Character: {item.character}</p>
+            <div className={css.actorInfo}>
+              <strong>{item.name}</strong>
+              <p>Character: {item.character}</p>
+            </div>
           </li>
         ))}
       </ul>

@@ -8,7 +8,7 @@ import Layout from "./Layout";
 const Home = lazy(() => import("../pages/Home"));
 const Movies = lazy(() => import("../pages/Movies"));
 const MovieDetails = lazy(() => import("../pages/MovieDetails"));
-const MovieCast = lazy(() => import("./MovieCast"));
+const MovieCast = lazy(() => import("./MovieCast/MovieCast"));
 const MovieReviews = lazy(() => import("./MovieReviews"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
