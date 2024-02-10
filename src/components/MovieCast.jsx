@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
 import { Loader } from "./Loader/Loader";
 
-export const MovieCast = () => {
+export default function MovieCast() {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   const [error, setError] = useState(null);
@@ -38,6 +38,8 @@ export const MovieCast = () => {
         {cast.map((item) => (
           <li key={item.id}>
             <img
+              width="80"
+              height="120"
               src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
               alt={item.name}
             />
@@ -48,7 +50,7 @@ export const MovieCast = () => {
       </ul>
     </div>
   );
-};
+}
 
 // adult: false;
 // cast_id: 5;

@@ -1,46 +1,35 @@
-import css from "./App.module.css";
-import clsx from "clsx";
-import { NavLink, Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+// import css from "./App.module.css";
 
+import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import Layout from "./Layout";
+
+// const Layout = lazy(() => import("./Layout"));
 const Home = lazy(() => import("../pages/Home"));
-const NotFound = lazy(() => import("../pages/NotFound"));
 const Movies = lazy(() => import("../pages/Movies"));
 const MovieDetails = lazy(() => import("../pages/MovieDetails"));
 const MovieCast = lazy(() => import("./MovieCast"));
 const MovieReviews = lazy(() => import("./MovieReviews"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
-
-export default function App() {
+export const App = () => {
   return (
-    <div>
-      <nav className={css.nav}>
-        <NavLink to="/" className={buildLinkClass}>
-          Home
-        </NavLink>
-        <NavLink to="/movies" className={buildLinkClass}>
-          Movies
-        </NavLink>
-      </nav>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
           <Route path="/movies" element={<Movies />} />
 
           <Route path="movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>
-
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </div>
+        </Route>
+      </Routes>
+    </Suspense>
   );
-}
+};
 // App.jsx
 // import NotFound from "../pages/NotFound";
 // import Home from "../pages/Home";

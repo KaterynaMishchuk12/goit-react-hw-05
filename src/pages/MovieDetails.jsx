@@ -43,7 +43,9 @@ export default function MovieDetails() {
         <Link to={`cast`} state={{ from: location }}>
           Cast
         </Link>
-        <Link to="reviews">Reviews</Link>
+        <Link to="reviews" state={{ from: location }}>
+          Reviews
+        </Link>
       </div>
 
       <Suspense fallback={<b>Loading data...</b>}>

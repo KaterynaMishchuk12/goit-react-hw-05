@@ -23,7 +23,7 @@ export const MovieCard = ({ movie }) => {
       <h2>
         {movie.title} ({movie.release_date && movie.release_date.slice(0, 4)})
       </h2>
-      <p>Rating: {movie.popularity}</p>
+      <p>Rating: {movie.vote_average}</p>
       <h3>Overview</h3>
 
       <p>{movie.overview}</p>
