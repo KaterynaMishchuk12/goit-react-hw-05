@@ -1,12 +1,18 @@
-import { Link, Outlet } from "react-router-dom";
-import css from "./MovieCard.module.css";
+// import { Suspense } from "react";
+// import { Link, Outlet,  } from "react-router-dom";
+// import css from "./MovieCard.module.css";
+// import { Backlink } from "../Backlink/Backlink";
 
 export const MovieCard = ({ movie }) => {
+  // const location = useLocation();
+  // const backLinkHref = location.state?.from ?? "/movies";
+
   if (!movie) {
     return null;
   }
   return (
     <div>
+      {/* <Backlink to={backLinkHref}>Go back</Backlink> */}
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
@@ -23,15 +29,20 @@ export const MovieCard = ({ movie }) => {
       <p>{movie.overview}</p>
 
       <h3>Additional information</h3>
-      <div className={css.nav}>
-        <Link to="cast">Cast</Link>
+      {/* <div className={css.nav}>
+        <Link to={`cast`} state={{ from: location }}>
+          Cast
+        </Link>
         <Link to="reviews">Reviews</Link>
       </div>
-      <Outlet />
+
+      <Suspense fallback={<b>Loading data...</b>}>
+        <Outlet />
+      </Suspense> */}
     </div>
   );
 };
-
+// ./Moviecard.jsx
 // adult: false;
 // backdrop_path: "/3mpgltEMgPf8zFtPnAWdDVN8ZT1.jpg";
 // genre_ids: (2)[(35, 18)];

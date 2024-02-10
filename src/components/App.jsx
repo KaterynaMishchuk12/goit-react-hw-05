@@ -10,13 +10,6 @@ const MovieDetails = lazy(() => import("../pages/MovieDetails"));
 const MovieCast = lazy(() => import("./MovieCast"));
 const MovieReviews = lazy(() => import("./MovieReviews"));
 
-// import NotFound from "../pages/NotFound";
-// import Home from "../pages/Home";
-// import Movies from "../pages/Movies";
-// import MovieDetails from "../pages/MovieDetails";
-// import { MovieCast } from "./MovieCast";
-// import { MovieReviews } from "./MovieReviews";
-
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
 };
@@ -48,3 +41,10 @@ export default function App() {
     </div>
   );
 }
+// App.jsx
+// import NotFound from "../pages/NotFound";
+// import Home from "../pages/Home";
+// import Movies from "../pages/Movies";
+// import MovieDetails from "../pages/MovieDetails";
+// import { MovieCast } from "./MovieCast";
+// import { MovieReviews } from "./MovieReviews";
