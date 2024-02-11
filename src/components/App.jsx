@@ -1,10 +1,8 @@
 // import css from "./App.module.css";
-
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Layout from "./Layout";
 
-// const Layout = lazy(() => import("./Layout"));
 const Home = lazy(() => import("../pages/Home"));
 const Movies = lazy(() => import("../pages/Movies"));
 const MovieDetails = lazy(() => import("../pages/MovieDetails"));
