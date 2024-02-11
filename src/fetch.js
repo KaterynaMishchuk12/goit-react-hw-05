@@ -56,3 +56,14 @@ export const fetchCast = async (movieId) => {
     throw error;
   }
 };
+
+export const fetchReview = async (movieId) => {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US`;
+  try {
+    const response = await axios.get(url, options);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+    throw error;
+  }
+};

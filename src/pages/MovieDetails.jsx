@@ -5,7 +5,6 @@ import { MovieCard } from "../components/MovieCard/MovieCard";
 import { Loader } from "../components/Loader/Loader";
 import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
 import { Backlink } from "../components/Backlink/Backlink";
-// import css from "./MovieCard.module.css";
 
 export default function MovieDetails() {
   const { movieId } = useParams();
@@ -39,11 +38,11 @@ export default function MovieDetails() {
       {loading && <Loader />}
       {error && <ErrorMessage />}
       <MovieCard movie={movie} />
-      <div>
+      <div style={{ display: "flex", gap: "10px" }}>
         <Link to={`cast`} state={{ from: location }}>
           Cast
         </Link>
-        <Link to="reviews" state={{ from: location }}>
+        <Link to={`reviews`} state={{ from: location }}>
           Reviews
         </Link>
       </div>
