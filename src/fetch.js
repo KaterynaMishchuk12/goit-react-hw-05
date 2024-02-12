@@ -2,7 +2,6 @@ import axios from "axios";
 
 const API_KEY = "6c0a8ac743fa4cbf26014e8e3858a28f";
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
-// axios.defaults.headers.common["Authorization"] = `Bearer ${API_KEY}`;
 
 const options = {
   params: {

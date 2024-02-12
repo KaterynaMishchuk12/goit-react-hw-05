@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import css from "./SearchForm.module.css";
 
 export const SearchForm = ({ onSearch }) => {
   const inputRef = useRef();
@@ -17,7 +18,7 @@ export const SearchForm = ({ onSearch }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={css.form}>
         <input
           ref={inputRef}
           type="text"
@@ -26,7 +27,7 @@ export const SearchForm = ({ onSearch }) => {
           defaultValue={""}
         />
         <button type="submit">Search</button>
-        <Toaster />
+        <Toaster style={{ padding: "80px" }} />
       </form>
     </div>
   );

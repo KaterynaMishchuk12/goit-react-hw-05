@@ -36,7 +36,9 @@ export default function MovieReviews() {
         {reviews.length > 0 ? (
           reviews.map((review) => (
             <li key={review.id}>
-              <p>{review.author}</p>
+              <p>
+                <strong>Author:</strong> {review.author}
+              </p>
               <p>{review.content}</p>
             </li>
           ))

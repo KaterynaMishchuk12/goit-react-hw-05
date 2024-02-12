@@ -12,14 +12,13 @@ export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [params, setParams] = useSearchParams();
   const search = params.get("query") ?? "";
-  const location = useLocation;
+  const location = useLocation();
 
   const searchMovie = async (query) => {
     try {
       setLoading(true);
       const fetchedMovies = await fetchMovies(query);
       setMovies(fetchedMovies.results);
-      console.log(fetchedMovies.results);
       const nextParams = query !== "" ? { query } : {};
       setParams(nextParams);
     } catch (error) {

@@ -1,4 +1,3 @@
-// import css from "./App.module.css";
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Layout from "./Layout";
@@ -28,10 +27,3 @@ export const App = () => {
     </Suspense>
   );
 };
-// App.jsx
-// import NotFound from "../pages/NotFound";
-// import Home from "../pages/Home";
-// import Movies from "../pages/Movies";
-// import MovieDetails from "../pages/MovieDetails";
-// import { MovieCast } from "./MovieCast";
-// import { MovieReviews } from "./MovieReviews";

@@ -12,7 +12,7 @@ export default function MovieDetails() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/movies";
+  const backLinkHref = location.state?.from ?? "/";
 
   useEffect(() => {
     async function fetchData() {
@@ -34,17 +34,13 @@ export default function MovieDetails() {
 
   return (
     <div>
-      <Backlink to={backLinkHref}>Back to movies</Backlink>
+      <Backlink to={backLinkHref}>Back</Backlink>
       {loading && <Loader />}
       {error && <ErrorMessage />}
       <MovieCard movie={movie} />
       <div style={{ display: "flex", gap: "10px" }}>
-        <Link to={`cast`} state={{ from: location }}>
-          Cast
-        </Link>
-        <Link to={`reviews`} state={{ from: location }}>
-          Reviews
-        </Link>
+        <Link to={`cast`}>Cast</Link>
+        <Link to={`reviews`}>Reviews</Link>
       </div>
 
       <Suspense fallback={<b>Loading data...</b>}>
@@ -53,4 +49,3 @@ export default function MovieDetails() {
     </div>
   );
 }
-// MovieDetails.jsx

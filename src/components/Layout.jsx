@@ -8,7 +8,7 @@ export default function Layout() {
   };
   return (
     <>
-      <header>
+      <header className={css.header}>
         <nav className={css.nav}>
           <NavLink to="/" className={buildLinkClass}>
             Home
@@ -24,18 +24,3 @@ export default function Layout() {
     </>
   );
 }
-// Layout.jsx
-
-// .nav {
-//   display: flex;
-//   gap: 12px;
-// }
-// .link {
-//   text-decoration: none;
-// }
-// .link:hover {
-//   text-decoration: underline;
-// }
-// .active {
-//   color: rgb(24, 148, 78);
-// }

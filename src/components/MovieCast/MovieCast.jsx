@@ -52,16 +52,3 @@ export default function MovieCast() {
     </div>
   );
 }
-
-// adult: false;
-// cast_id: 5;
-// character: "Willy Wonka";
-// credit_id: "60abc25ac2b9df006c33cdb8";
-// gender: 2;
-// id: 1190668;
-// known_for_department: "Acting";
-// name: "Timothée Chalamet";
-// order: 0;
-// original_name: "Timothée Chalamet";
-// popularity: 106.327;
-// profile_path: "/BE2sdjpgsa2rNTFa66f7upkaOP.jpg";
